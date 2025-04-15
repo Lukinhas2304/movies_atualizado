@@ -4,40 +4,29 @@ const styles = StyleSheet.create({
     containerJogos:{
         display: 'flex',
         flexDirection: 'column',
-        padding: 20,
-        paddingTop: 16,
+        paddingTop: 20,
         paddingRight: 16,
+        marginRight: 20,
         width: 140,
         height: 28
     },
     titulo:{
         color: 'white',
-        fontSize: 12,
+        fontSize: 11,
+        textAlign: 'center',
         paddingTop: 8
     },
     textNota:{
         color: 'white',
-        fontSize: 10,
-        paddingLeft: 4
+        fontSize: 11,
+        textAlign: 'center'
     },
     images:{
-        width: 110,
+        width: 140,
         height: 220,
         borderRadius: 8
     },
 
-    viewcontainer:{
-        display:'flex',
-        flexDirection:'row',
-        justifyContent:'space-around',
-        alignItems:'center',
-        gap: '20px',
-        marginLeft:'-69px'
-    },
-
-    viewcard:{
-        padding: '10px'
-    }
     
    
 })
