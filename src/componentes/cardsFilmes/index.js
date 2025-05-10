@@ -1,11 +1,13 @@
 import React from 'react'
 import {View, Image, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export default function CardMovies({titulo,imagem,nota}){
+    const navigation = useNavigation();
     return(
         <>
-        <TouchableOpacity style = {styles.containerJogos}>
+        <TouchableOpacity style = {styles.containerJogos} onPress={()=> navigation.navigate('Detalhes',{titulo, nota, imagem})}>
          
         <View  style = {styles.viewcontainer}> 
             <View>
@@ -16,12 +18,6 @@ export default function CardMovies({titulo,imagem,nota}){
 
         </View>
 
-        
-         
-
-
-            
-            
         </TouchableOpacity>
 
         </>
