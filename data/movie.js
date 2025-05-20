@@ -6,7 +6,8 @@ const DATA =
                id: '01',
                nome: 'Homem Formiga e Vespa ',
                nota: 'Nota: 8',
-               imagem: 'https://m.media-amazon.com/images/I/71Xbh4eXxBS.jpg'
+               imagem: 'https://m.media-amazon.com/images/I/71Xbh4eXxBS.jpg',
+               sinopse: 'Scott Lang lida com as consequências de suas escolhas tanto como super-herói quanto como pai. Enquanto tenta reequilibrar sua vida com suas responsabilidades como o Homem-Formiga, ele é chamado por Hope van Dyne e Dr. Hank Pym para uma nova missão urgente. Scott precisa mais uma vez vestir o uniforme e aprender a lutar ao lado da Vespa, trabalhando em conjunto para descobrir segredos do passado.'
           },
           {
                id: '02',

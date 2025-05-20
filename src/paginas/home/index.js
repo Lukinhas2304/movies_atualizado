@@ -7,7 +7,7 @@ import Filmes from '../../../data/movie';
 
 export default function Home (){
     return(
-      <ScrollView style={styles.scrollcont}>
+      <View style={styles.scrollcont}>
         <View style={styles.container}>
         
               <Cabecalho />
@@ -23,7 +23,7 @@ export default function Home (){
                 renderItem={({item}) => (
         
         
-                  <CardMovies titulo = {item.nome} nota = {item.nota} imagem = {item.imagem}
+                  <CardMovies titulo = {item.nome} nota = {item.nota} imagem = {item.imagem} sinopse = {item.sinopse}
                   />
                   
                 )}
@@ -32,7 +32,7 @@ export default function Home (){
               
         
             </View>
-            </ScrollView>
+            </View>
     )
 }
 

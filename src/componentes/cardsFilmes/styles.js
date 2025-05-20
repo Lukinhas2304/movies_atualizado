@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
     },
     titulo:{
         color: 'white',
-        fontSize: 11,
+        fontSize: 16,
         textAlign: 'center',
         paddingTop: 8,
         marginLeft: 7
     },
     textNota:{
         color: 'white',
-        fontSize: 11,
+        fontSize: 14,
         textAlign: 'center'
     },
     images:{
