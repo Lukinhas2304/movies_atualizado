@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center', 
         borderRadius: 20,  
         marginTop: 35,
-        marginBottom: 30
+        marginBottom: 20
     },
 
     viewContainer: {
@@ -33,33 +33,37 @@ const styles = StyleSheet.create({
     },
     
     titulo:{
-        fontSize: 20,
-        color:'black'
+        fontSize: 24,
+        color:'black',
+        fontWeight: 600
     },
     nota: {
         marginTop: 30,
         marginBottom:5,
-        fontSize:20
+        fontSize:22,
+        fontWeight: 400
     },
     sinopseCont:{
-        marginTop: 35,
+        marginTop: 25,
         fontSize: 10,
         backgroundColor: 'white',
-          flexDirection: 'column',
+        flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center', 
         textAlign: 'center',
-        height: 500 ,
+        height: 300 ,
         width: 300,
-        borderRadius: 30
-      
+        borderRadius: 30,
+        paddingBottom: 10,
+        paddingLeft: 5,
+        paddingRight: 5
     },
 
 
     sinopseT:    {
         color: 'black',
         fontSize: 30,
-        marginTop: 30,
+        marginTop: 20,
         marginBottom: 5,
         fontWeight: 'bold'  
     },
