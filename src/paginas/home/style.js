@@ -2,11 +2,16 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container :{
-      flex: 1,
-      backgroundColor: '#141a29',
-      alignItems: 'center'
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center',
+    
+   },
+    scrollcont :{
+      width:'100%',
+      height:'100%',
+      backgroundColor:'#141a28'
     },
-
     containerView:{
         display:'flex',
         flexDirecrion:'column',
@@ -14,7 +19,7 @@ const styles = StyleSheet.create({
     },
     textBanner:{
         fontSize: 30,
-        color: 'white',
+        color: 'yellow',
         marginTop: 15,
         marginLeft: -180,
         fontWeight: 'bold'
