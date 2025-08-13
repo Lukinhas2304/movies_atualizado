@@ -10,9 +10,9 @@ export default function Detalhes(){
         <View style = {styles.viewContainer}>
        
         <View  style = {styles.viewCard}>
-               <Image style = {styles.images} source = {{uri:(route.params.imagem)}}/>
+              <Image style = {styles.images} source = {{uri:(`https://image.tmdb.org/t/p/original/${route.params.imagem}`)}}/>
               <Text style ={styles.titulo}> {route.params.titulo}</Text>
-            <Text   Text style ={styles.nota}> {route.params.nota} </Text>
+            <Text style ={styles.textNota}> {route.params.nota} </Text>
         
         </View>
             <View   style = {styles.sinopseCont}>

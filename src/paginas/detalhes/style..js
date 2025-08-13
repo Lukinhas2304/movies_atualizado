@@ -26,22 +26,21 @@ const styles = StyleSheet.create({
         backgroundColor:  '#141a29'
     },
     images:{
-        
-        width: 150,
-        height: 260,
+        width: 250,
+        height: 360,
         borderRadius: 8,
     },
     
     titulo:{
         fontSize: 24,
         color:'black',
-        fontWeight: 600
+        fontWeight: 600,
+        marginTop: 15
     },
-    nota: {
-        marginTop: 30,
-        marginBottom:5,
-        fontSize:22,
-        fontWeight: 400
+    textNota:{
+        color: 'rgb(255, 190, 0)',
+        fontSize: 16,
+        textAlign: 'center'
     },
     sinopseCont:{
         marginTop: 25,
@@ -51,8 +50,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center', 
         textAlign: 'center',
-        height: 300 ,
-        width: 300,
+        height: 'auto',
+        width: 350,
         borderRadius: 30,
         paddingBottom: 10,
         paddingLeft: 5,
@@ -82,9 +81,10 @@ const styles = StyleSheet.create({
       
     },
     button: {
-        fontSize: 20,
+        fontSize: 16,
+        fontWeight: 'bold',
         color: 'black',
-        padding:15,
+        padding: 13,
         fontFamily: "Arial"
     
     }

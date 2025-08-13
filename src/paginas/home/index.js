@@ -49,7 +49,7 @@ export default function Home (){
                 renderItem={({item}) => (
         
         
-                  <CardMovies titulo = {item.title} nota = {item.vote_average} imagem = {item.poster_path} sinopse = {item.overview}
+                  <CardMovies style={styles.textNota} titulo = {item.title} nota = {item.vote_average} imagem = {item.poster_path} sinopse = {item.overview}
                   />
                   
                 )}

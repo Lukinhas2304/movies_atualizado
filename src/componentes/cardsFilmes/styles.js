@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         marginLeft: 7
     },
     textNota:{
-        color: 'white',
+        color: 'rgb(255, 190, 0)',
         fontSize: 16,
         textAlign: 'center'
     },
