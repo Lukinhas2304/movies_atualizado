@@ -9,7 +9,13 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 export default function Home (){
-    const [movies,setMovies] = useState([]);
+    const [moviesTopRated, setMoviesTopRated] = useState([]);
+
+    const [moviesPopular, setMoviesPopular] = useState([]);
+
+    const [moviesEmBreve, setMoviesEmBreve] = useState([]);
+
+    const [moviesCartaz, setMoviesCartaz] = useState([]);
 
     useEffect(()=>{
       async function buscarFilmes(){
@@ -20,45 +26,153 @@ export default function Home (){
           accept: 'application/json',
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZDBmOGM5N2QyY2I0MjFhNzg2YWM4M2RmODg2NDgyMSIsIm5iZiI6MTc1NTAyMTUxMy40MjgsInN1YiI6IjY4OWI4MGM5ZjY3OWYxZjk4MDhlYmExMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1pmvF7ANUfX0oYEEEro7Hr2QDXV3VX7DyA-NUhzB5rQ'
           }
-        };
+        }; 
+
+        
 
         const response = await fetch(url, options)
         const data = await response.json();
         console.log(data);
 
-        setMovies(data.results);
+        setMoviesTopRated(data.results);
       }
 
     buscarFilmes();
     },[])
 
+    useEffect(()=>{
+      async function buscarFilmes(){
+        const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
+        const options = {
+          method: 'GET',
+          headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZDBmOGM5N2QyY2I0MjFhNzg2YWM4M2RmODg2NDgyMSIsIm5iZiI6MTc1NTAyMTUxMy40MjgsInN1YiI6IjY4OWI4MGM5ZjY3OWYxZjk4MDhlYmExMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1pmvF7ANUfX0oYEEEro7Hr2QDXV3VX7DyA-NUhzB5rQ'
+          }
+        };
+
+        
+
+        const response = await fetch(url, options)
+        const data = await response.json();
+        console.log(data);
+
+        setMoviesPopular(data.results);
+      }
+      
+
+    buscarFilmes();
+    },[])
+
+    useEffect(()=>{
+      async function buscarFilmes(){
+        const url = 'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1';
+        const options = {
+          method: 'GET',
+          headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZDBmOGM5N2QyY2I0MjFhNzg2YWM4M2RmODg2NDgyMSIsIm5iZiI6MTc1NTAyMTUxMy40MjgsInN1YiI6IjY4OWI4MGM5ZjY3OWYxZjk4MDhlYmExMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1pmvF7ANUfX0oYEEEro7Hr2QDXV3VX7DyA-NUhzB5rQ'
+          }
+        };
+
+        
+
+        const response = await fetch(url, options)
+        const data = await response.json();
+        console.log(data);
+
+        setMoviesEmBreve(data.results);
+      }
+      
+
+    buscarFilmes();
+    },[])
+
+    useEffect(()=>{
+      async function buscarFilmes(){
+        const url = 'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1';
+        const options = {
+          method: 'GET',
+          headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZDBmOGM5N2QyY2I0MjFhNzg2YWM4M2RmODg2NDgyMSIsIm5iZiI6MTc1NTAyMTUxMy40MjgsInN1YiI6IjY4OWI4MGM5ZjY3OWYxZjk4MDhlYmExMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1pmvF7ANUfX0oYEEEro7Hr2QDXV3VX7DyA-NUhzB5rQ'
+          }
+        };
+
+        
+
+        const response = await fetch(url, options)
+        const data = await response.json();
+        console.log(data);
+
+        setMoviesCartaz(data.results);
+      }
+      
+
+    buscarFilmes();
+    },[])
+
     return(
-      <View style={styles.scrollcont}>
+      <ScrollView style={styles.scrollcont}>
         <View style={styles.container}>
         
-              <Cabecalho />
+          <Cabecalho />
         
-              <Pesquisa />
+          <Pesquisa />
         
-              <Banner/>
-              <View style ={{width: "90%", height:"100%"}}>
-              <FlatList
+          <Banner/>
+          <View style ={{width: "90%", height:"300%"}}>
+            <FlatList
+              showsHorizontalScrollIndicator={false}
               horizontal = {true}
-                data={movies}
-                keyExtactor={(item) => item.id}
-                renderItem={({item}) => (
+              data={moviesTopRated}
+              keyExtactor={(item) => item.id}
+              renderItem={({item}) => (
         
         
-                  <CardMovies style={styles.textNota} titulo = {item.title} nota = {item.vote_average} imagem = {item.poster_path} sinopse = {item.overview}
-                  />
+                <CardMovies style={styles.textNota} titulo = {item.title} nota = {item.vote_average} imagem = {item.poster_path} sinopse = {item.overview}/>
                   
-                )}
-              />  
-              </View>
-              
+              )}
+            />  
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal = {true}
+              data={moviesPopular}
+              keyExtactor={(item) => item.id}
+              renderItem={({item}) => (
         
-            </View>
-            </View>
+        
+                <CardMovies style={styles.textNota} titulo = {item.title} nota = {item.vote_average} imagem = {item.poster_path} sinopse = {item.overview}/>
+                  
+              )}
+            />
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal = {true}
+              data={moviesEmBreve}
+              keyExtactor={(item) => item.id}
+              renderItem={({item}) => (
+        
+        
+                <CardMovies style={styles.textNota} titulo = {item.title} nota = {item.vote_average} imagem = {item.poster_path} sinopse = {item.overview}/>
+                  
+              )}
+            />
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal = {true}
+              data={moviesCartaz}
+              keyExtactor={(item) => item.id}
+              renderItem={({item}) => (
+        
+        
+                <CardMovies style={styles.textNota} titulo = {item.title} nota = {item.vote_average} imagem = {item.poster_path} sinopse = {item.overview}/>
+                  
+              )}
+            />
+          </View>
+        </View>
+      </ScrollView>
     )
 }
   
