@@ -17,12 +17,23 @@ const styles = StyleSheet.create({
         flexDirecrion:'column',
         alignItems:'center'
     },
-    textBanner:{
-        fontSize: 30,
-        color: 'yellow',
-        marginTop: 15,
-        marginLeft: -180,
-        fontWeight: 'bold'
+    textBanner: {
+      fontSize: 30,
+      color: "white",
+      fontWeight: 'bold',
+      marginTop: -50
+    },
+    textBanner1: {
+      fontSize: 30,
+      color: "white",
+      fontWeight: 'bold',
+      marginTop: 50
+    },
+    textBanner2: {
+      fontSize: 30,
+      color: "white",
+      fontWeight: 'bold',
+      marginTop: -20
     }
   });
 
