@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../paginas/home";
 import Detalhes from "../paginas/detalhes";
+import PesquisarFilmes from "../paginas/pesquisa";
 
 export default function Rotas(){
     const stack = createNativeStackNavigator();
@@ -10,6 +11,8 @@ export default function Rotas(){
             <stack.Navigator screenOptions={{headerShown:false}}>
                 <stack.Screen name="Home" component={Home}/>
                 <stack.Screen name="Detalhes" component={Detalhes} options={{headerShown:true}}/>
+                <stack.Screen name="Pesquisa" component={PesquisarFilmes} options ={{headerShown:true}}/>
+                
             </stack.Navigator>
         </NavigationContainer>
     )
