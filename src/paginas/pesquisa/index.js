@@ -1,6 +1,7 @@
-import {View, Text} from 'react-native';
+import {View, Text, FlatList,Image,ScrollView} from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { useEffect,useState } from 'react';
+import styles from './style';
 
 export default function PesquisarFilmes(){
 
@@ -19,8 +20,8 @@ export default function PesquisarFilmes(){
 
             const response = await fetch (url, options)
             const data = await response.json()
-            
             console.log(data.results)
+            setFilmes(data.results)
         }
 
         buscarFilmes()
@@ -29,10 +30,18 @@ export default function PesquisarFilmes(){
     const route = useRoute();
 
     return(
-        <View>
-        <Text>
-            {route.params.pesquisa}
-        </Text>
-    </View>
+    <ScrollView>
+        <FlatList
+            data={filmes}
+            keyExtractor={(item)=>item.id}
+            renderItem={({item})=>(
+                <View>
+                    <Text>Filme:{item.title}</Text>
+                    <Text>Nota: {item.vote_average}</Text>
+                    <Image style ={{width: "100%",height:150}} source={{uri:(`https://image.tmdb.org/t/p/original/${item.poster_path}`)}}/>
+                </View>
+            )}
+        />
+    </ScrollView>
     )
 }   
