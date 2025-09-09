@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { useRoute } from "@react-navigation/native";
-import {ScrollView, View, Text, TouchableOpacity, Image} from "react-native-web";
+import {ScrollView, View, Text, TouchableOpacity, Image} from "react-native";
 import styles from "./style";
 
 export default function DetalhesPesquisa(){

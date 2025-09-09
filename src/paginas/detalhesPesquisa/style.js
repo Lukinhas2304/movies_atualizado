@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color:'black',
         fontWeight: 600,
-        marginTop: 15
+        marginTop: 15,
+        textAlign: 'center'
     },
     textNota:{
         color: 'rgb(255, 190, 0)',

@@ -10,10 +10,12 @@ export default function Rotas(){
     return(
         <NavigationContainer>
             <stack.Navigator screenOptions={{headerShown:false}}>
+            
                 <stack.Screen name="Home" component={Home}/>
                 <stack.Screen name="Detalhes" component={Detalhes} options={{headerShown:true}}/>
                 <stack.Screen name="Pesquisa" component={PesquisarFilmes} options ={{headerShown:true}}/>
                 <stack.Screen name="DetalhesPesquisa" component={DetalhesPesquisa} options ={{headerShown:true}}/>
+            
             </stack.Navigator>
         </NavigationContainer>
     )

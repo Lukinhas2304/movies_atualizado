@@ -1,5 +1,5 @@
 import {View, Text, FlatList,Image,ScrollView, TouchableOpacity} from 'react-native';
-import { useRoute } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { useEffect,useState } from 'react';
 import styles from './style';
 
@@ -27,6 +27,9 @@ export default function PesquisarFilmes(){
         buscarFilmes()
     },[])
 
+
+    
+    const navigation = useNavigation();
     const route = useRoute();
 
     return(
@@ -36,7 +39,7 @@ export default function PesquisarFilmes(){
             data={filmes}
             keyExtractor={(item)=>item.id}
             renderItem={({item})=>(
-                <TouchableOpacity style={styles.containerFilme} onPress={()=> navigation.navigate('Home', {filme: item})}>
+                <TouchableOpacity style={styles.containerFilme} onPress={()=> navigation.navigate('DetalhesPesquisa', {filme: item})}>
                     <View>
                         <Image style = {styles.imagem} source={{uri:(`https://image.tmdb.org/t/p/original/${item.poster_path}`)}}/>
                         <Text style = {styles.titulo}>{item.title}</Text>
