@@ -1,4 +1,4 @@
-import {View, Text, FlatList,Image,ScrollView} from 'react-native';
+import {View, Text, FlatList,Image,ScrollView, TouchableOpacity} from 'react-native';
 import { useRoute } from '@react-navigation/native';
 import { useEffect,useState } from 'react';
 import styles from './style';
@@ -30,16 +30,19 @@ export default function PesquisarFilmes(){
     const route = useRoute();
 
     return(
-    <ScrollView>
+    <ScrollView style ={styles.viewScroll}>
         <FlatList
+            styles = {styles.container}
             data={filmes}
             keyExtractor={(item)=>item.id}
             renderItem={({item})=>(
-                <View>
-                    <Text>Filme:{item.title}</Text>
-                    <Text>Nota: {item.vote_average}</Text>
-                    <Image style ={{width: "100%",height:150}} source={{uri:(`https://image.tmdb.org/t/p/original/${item.poster_path}`)}}/>
-                </View>
+                <TouchableOpacity style={styles.containerFilme} onPress={()=> navigation.navigate('Home', {filme: item})}>
+                    <View>
+                        <Image style = {styles.imagem} source={{uri:(`https://image.tmdb.org/t/p/original/${item.poster_path}`)}}/>
+                        <Text style = {styles.titulo}>{item.title}</Text>
+                        <Text style = {styles.notas}>Nota: {item.vote_average}</Text>
+                    </View>
+                </TouchableOpacity>
             )}
         />
     </ScrollView>

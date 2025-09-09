@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "../paginas/home";
 import Detalhes from "../paginas/detalhes";
 import PesquisarFilmes from "../paginas/pesquisa";
+import DetalhesPesquisa from "../paginas/detalhesPesquisa";
 
 export default function Rotas(){
     const stack = createNativeStackNavigator();
@@ -12,7 +13,7 @@ export default function Rotas(){
                 <stack.Screen name="Home" component={Home}/>
                 <stack.Screen name="Detalhes" component={Detalhes} options={{headerShown:true}}/>
                 <stack.Screen name="Pesquisa" component={PesquisarFilmes} options ={{headerShown:true}}/>
-                
+                <stack.Screen name="DetalhesPesquisa" component={DetalhesPesquisa} options ={{headerShown:true}}/>
             </stack.Navigator>
         </NavigationContainer>
     )
